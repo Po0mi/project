@@ -1,0 +1,534 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+.bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero {
+  height: 100vh;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  z-index: 0;
+  position: relative;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  height: 100%;
+}
+.content .about {
+  grid-area: 3/3/4/6;
+  background-color: rgba(100, 97, 108, 0.5);
+  width: 200%;
+  max-height: 1500px;
+  max-width: 1500px;
+  min-width: 280px;
+  min-height: 280px;
+  height: 120%;
+  padding: 2rem;
+  border-radius: 40px;
+  z-index: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+  border: 1px solid rgb(83, 83, 83);
+  box-shadow: 0px 4px 2px 0px rgba(0, 0, 0, 1);
+  animation: float 2s ease-in-out infinite;
+}
+
+.about .avatar {
+  background-color: bisque;
+  width: clamp(8rem, 20vw, 20rem);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: 4px solid rgb(55, 53, 61);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  background-image: url("profile.jpg");
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0px 4px 2px 0px rgba(0, 0, 0, 1);
+}
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+.about-me {
+  color: white;
+  position: relative;
+  top: 10px;
+  text-shadow: 3px 3px 2px rgba(0, 0, 0, 1);
+}
+
+.circle,
+.circle2 {
+  width: clamp(2rem, 8vw, 6rem);
+  height: clamp(2rem, 8vw, 6rem);
+  background-color: rgba(74, 66, 97, 0.702);
+  border-radius: 50%;
+  position: absolute;
+  z-index: 0;
+  border: 1px solid rgb(55, 53, 61);
+  box-shadow: 0px 4px 2px 0px rgba(0, 0, 0, 1);
+}
+
+.circle {
+  top: 10%;
+  left: 30%;
+  background-image: url("fish.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.circle2 {
+  bottom: 65%;
+  right: 31%;
+  background-image: url("monkey.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.card1,
+.card2,
+.card3,
+.card4,
+.card5 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  border-radius: 50px;
+  background-color: rgba(74, 66, 97, 0.702);
+}
+
+.card1 {
+  bottom: 10%;
+  width: 30%;
+  padding: 1.3rem 1rem;
+}
+.card1 p {
+  color: white;
+  font-size: clamp(0.9rem, 0.9vw, 0.6rem);
+  text-align: center;
+}
+
+.card2 {
+  left: 73%;
+  bottom: 10%;
+  width: 25%;
+  height: 35%;
+  padding: 1.1rem 1rem;
+}
+.card2 p {
+  color: white;
+  font-size: clamp(0.9rem, 0.9vw, 0.6rem);
+  text-align: center;
+}
+.card3 {
+  left: 73%;
+  top: 10%;
+  width: 25%;
+  height: 35%;
+  padding: 1rem 1rem;
+}
+.card3 p {
+  color: white;
+  font-size: clamp(0.9rem, 0.9vw, 0.6rem);
+  text-align: center;
+}
+.card4 {
+  right: 73%;
+  top: 10%;
+  width: 25%;
+  height: 35%;
+  padding: 1rem 1rem;
+}
+.card4 p {
+  color: white;
+  font-size: clamp(0.9rem, 0.9vw, 0.6rem);
+  text-align: center;
+}
+.card5 {
+  right: 73%;
+  bottom: 10%;
+  width: 25%;
+  height: 35%;
+  padding: 1rem 1rem;
+}
+.card5 p {
+  color: white;
+  font-size: clamp(0.9rem, 0.9vw, 0.6rem);
+  text-align: center;
+}
+.social-container {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+}
+
+.socials {
+  display: flex;
+  gap: 5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.socials a {
+  font-size: clamp(1rem, 2vw, 5rem);
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  background-color: rgba(74, 66, 97, 0.702);
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  position: relative; /* for tooltip positioning */
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.socials a:hover {
+  -webkit-animation: jello-horizontal 0.9s both;
+  animation: jello-horizontal 0.9s both;
+}
+@-webkit-keyframes jello-horizontal {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes jello-horizontal {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.socials a::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.socials a:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+canvas {
+  filter: blur(1px);
+  position: absolute;
+}
+@media (max-width: 1980px) {
+  .about {
+    width: 180%;
+    padding: 1rem;
+    position: relative;
+    bottom: 50px;
+  }
+  .about .avatar {
+    width: clamp(1rem, 18vw, 18rem);
+  }
+  .card1,
+  .card2,
+  .card3,
+  .card4,
+  .card5 {
+    width: 25%;
+    height: 100px;
+    padding: 2rem;
+  }
+  .card1 p,
+  .card2 p,
+  .card3 p,
+  .card4 p,
+  .card5 p {
+    font-size: clamp(0.1rem, 5vw, 0.6rem);
+  }
+}
+
+@media (max-width: 992px) {
+  .about {
+    width: 160%;
+    padding: 1.2rem;
+  }
+  .about .avatar {
+    width: clamp(6rem, 16vw, 16rem);
+  }
+  .card1,
+  .card2,
+  .card3,
+  .card4,
+  .card5 {
+    width: 10%;
+    height: auto;
+    padding: 0.8rem;
+  }
+  .circle,
+  .circle2 {
+    width: clamp(1.5rem, 6vw, 4rem);
+    height: clamp(1.5rem, 6vw, 4rem);
+  }
+  .socials {
+    gap: 3rem;
+  }
+  .socials a {
+    width: 60px;
+    height: 60px;
+    font-size: clamp(0.9rem, 1.5vw, 3rem);
+  }
+}
+@media (max-width: 1440px) {
+  .about {
+    width: 180%;
+    padding: 1rem;
+    position: relative;
+    bottom: 50px;
+  }
+  .about .avatar {
+    width: clamp(1rem, 18vw, 18rem);
+  }
+  .card1,
+  .card2,
+  .card3,
+  .card4,
+  .card5 {
+    width: 25%;
+    height: 100px;
+    padding: 1.5rem;
+  }
+  .card1 p,
+  .card2 p,
+  .card3 p,
+  .card4 p,
+  .card5 p {
+    font-size: clamp(0.1rem, 5vw, 0.6rem);
+  }
+}
+
+@media (max-width: 992px) {
+  .about {
+    width: 160%;
+    padding: 1.2rem;
+  }
+  .about .avatar {
+    width: clamp(6rem, 16vw, 16rem);
+  }
+  .card1,
+  .card2,
+  .card3,
+  .card4,
+  .card5 {
+    width: 10%;
+    height: auto;
+    padding: 0.8rem;
+  }
+  .circle,
+  .circle2 {
+    width: clamp(1.5rem, 6vw, 4rem);
+    height: clamp(1.5rem, 6vw, 4rem);
+  }
+  .socials {
+    gap: 3rem;
+  }
+  .socials a {
+    width: 60px;
+    height: 60px;
+    font-size: clamp(0.9rem, 1.5vw, 3rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+  .about {
+    width: 140%;
+    padding: 1rem;
+    min-width: 200px;
+    min-height: 200px;
+  }
+  .about .avatar {
+    width: clamp(5rem, 20vw, 12rem);
+  }
+  .card1,
+  .card2,
+  .card3,
+  .card4,
+  .card5 {
+    width: 40%;
+    height: auto;
+    padding: 0.5rem;
+  }
+  .circle,
+  .circle2 {
+    width: clamp(1rem, 5vw, 3rem);
+    height: clamp(1rem, 5vw, 3rem);
+  }
+  .socials {
+    gap: 2rem;
+  }
+  .socials a {
+    width: 50px;
+    height: 50px;
+    font-size: clamp(0.8rem, 2vw, 2.5rem);
+  }
+}
+
+@media (max-width: 390px) and (min-height: 844px) {
+  .content {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    justify-items: center;
+    align-items: start;
+  }
+
+  .about {
+    width: 90%;
+    min-width: 280px;
+    min-height: 200px;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .about .avatar {
+    width: clamp(4rem, 30vw, 8rem);
+  }
+
+  .card1,
+  .card2,
+  .card3,
+  .card4,
+  .card5 {
+    width: 80%;
+    height: auto;
+    padding: 0.5rem;
+    margin: 0.5rem auto;
+    position: relative;
+  }
+
+  .circle,
+  .circle2 {
+    width: clamp(1rem, 6vw, 2.5rem);
+    height: clamp(1rem, 6vw, 2.5rem);
+  }
+
+  .socials {
+    gap: 1rem;
+  }
+
+  .socials a {
+    width: 45px;
+    height: 45px;
+    font-size: clamp(0.8rem, 2vw, 1.5rem);
+  }
+}
